@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Waste Collection System</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      background-color: #f5f6fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      color: #007bff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+    }
+
+    .logout-btn {
+      background-color: #ff4757;
+      border: none;
+      padding: 8px 14px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #e84118;
+    }
+  </style>
+</head>
+
+<body>
+
+   
+  <header>
+    <h1>Waste Collection System Dashboard</h1>
+     <nav>
+        <a href="dashboard.html" class="active">Home</a>
+        <a href="collection.html">Collections</a>
+        <a href="reports.html">Reports</a>
+        <a href="map.html">Map</a>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+    </nav>
+
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Active Requests</h2>
+      <p>Monitor ongoing waste pickups and schedules.</p>
+    </div>
+
+    <div class="card">
+      <h2>Collection Records</h2>
+      <p>Track daily, weekly, and monthly waste collections.</p>
+    </div>
+
+    <div class="card">
+      <h2>Reports</h2>
+      <p>Generate performance and environmental impact reports.</p>
+    </div>
+
+    <div class="card">
+      <h2>Map View</h2>
+      <p>Locate bins and routes across different zones.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Waste Collection System | Developed by Kamisky</p>
+  </footer>
+
+  <script>
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      alert("You have been logged out!");
+      window.location.href = "index.html"; // Redirect back to login
+    });
+  </script>
+
+</body>
+</html>
