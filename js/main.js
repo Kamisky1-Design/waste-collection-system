@@ -1,45 +1,30 @@
-// =============================
-// Waste Collection System - Login Script
-// =============================
-
 document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.getElementById("loginForm");
-  const errorMsg = document.getElementById("errorMsg");
-  const logoutBtn = document.getElementById("logoutBtn");
+  // Handle Admin Login
+  const adminLoginForm = document.getElementById("adminLoginForm");
+  const adminErrorMsg = document.getElementById("adminErrorMsg");
 
-  // Handle login form submission
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
+  if (adminLoginForm) {
+    adminLoginForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Get input values
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
+      const username = document.getElementById("adminUsername").value.trim();
+      const password = document.getElementById("adminPassword").value.trim();
 
-      // Example credentials (you can modify this)
-      const validUsername = "admin";
-      const validPassword = "12345";
-
-      // Check credentials
-      if (username === validUsername && password === validPassword) {
-        errorMsg.style.display = "none";
-        alert("Login successful! Redirecting to dashboard...");
-
-        // Redirect to dashboard page
-        window.location.href = "dashboard.html";
+      if (username === "admin" && password === "admin123") {
+        localStorage.setItem("adminLoggedIn", "true");
+        window.location.href = "admin-dashboard.html";
       } else {
-        errorMsg.style.display = "block";
+        adminErrorMsg.style.display = "block";
       }
     });
   }
 
-  // =============================
-  // Logout Functionality
-  // =============================
+  // Handle Logout
+  const logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
-      alert("You have logged out successfully.");
-      window.location.href = "index.html"; // Redirect to login page
+      localStorage.removeItem("adminLoggedIn");
+      window.location.href = "admin-login.html";
     });
   }
 });

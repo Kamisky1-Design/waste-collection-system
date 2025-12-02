@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | Waste Collection System</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Waste Collection System</title>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form id="adminLoginForm">
+      <label for="adminUsername">Username</label>
+      <input type="text" id="adminUsername" placeholder="Enter username" required>
 
-  <header>
-    <h1>Waste Collection Management System</h1>
-  </header>
+      <label for="adminPassword">Password</label>
+      <input type="password" id="adminPassword" placeholder="Enter password" required>
 
-  <main>
-    <div class="login-container">
-      <h2>Admin Login</h2>
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" id="username" placeholder="Enter your username" required>
-        </div>
+      <button type="submit" id="adminLoginBtn">Login</button>
+    </form>
 
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" placeholder="Enter your password" required>
-        </div>
+    <p id="adminErrorMsg" class="error-message" style="display: none;">Invalid username or password!</p>
+  </div>
 
-        <button type="submit" class="btn-login">Login</button>
-      </form>
-
-      <p class="error-message" id="errorMsg">Invalid username or password!</p>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Waste Collection System | Developed by Kamisky</p>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
